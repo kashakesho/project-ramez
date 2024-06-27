@@ -112,6 +112,11 @@ exports.addToProfile = async (req, res, next) => {
 };
 exports.getProfile = async (req, res, next) => {
   const userID = req.params.id;
+  if (!userID) {
+    const error = new Error("please enter an id");
+    error.statusCode = 422;
+    next(error);
+  }
   const currentDate = new Date();
   const getProfile = await User.findById({ _id: userID });
   const age = currentDate.getFullYear() - getProfile.birthday.getFullYear();
