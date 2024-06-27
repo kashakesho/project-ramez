@@ -32,7 +32,7 @@ app.use((error, req, res, next) => {
 
 const port = process.env.PORT || 3000;
 
-console.log("sh8aal");
+console.log("running");
 mongoose
   .connect(
     "mongodb+srv://kashakesho:kashakesho@atlascluster.kxdb0dz.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster/project?retryWrites=true"
